@@ -56,7 +56,7 @@ class RemoveItemsButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
+    return OutlinedButton(
       child: Text('Delete all Items'),
       onPressed: () => model.onRemoveItems(),
     );
@@ -118,10 +118,10 @@ class _ViewModel {
   final Function() onRemoveItems;
 
   _ViewModel({
-    this.items,
-    this.onAddItem,
-    this.onRemoveItem,
-    this.onRemoveItems,
+    required this.items,
+    required this.onAddItem,
+    required this.onRemoveItem,
+    required this.onRemoveItems,
   });
 
   factory _ViewModel.create(Store<AppState> store) {

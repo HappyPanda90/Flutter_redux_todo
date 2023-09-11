@@ -5,11 +5,11 @@ class Item {
   final String body;
 
   Item({
-    @required this.id,
-    @required this.body,
+    required this.id,
+    required this.body,
   });
 
-  Item copyWith({int id, String body}) {
+  Item copyWith({int id = 0, String body = ""}) {
     return Item(
       id: id ?? this.id,
       body: body ?? this.body,
@@ -21,7 +21,7 @@ class AppState {
   final List<Item> items;
 
   AppState({
-    @required this.items,
+    required this.items,
   });
 
   AppState.initialState() : items = List.unmodifiable(<Item>[]);
